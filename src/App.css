@@ -1,0 +1,139 @@
+#app {
+  width: 100vw;
+  height: 100%;
+
+}
+
+.App {
+  /* position: absolute; */
+  width: 100vw;
+  height: 100%;
+  border: solid;
+  display: flex;
+  flex-direction : column;
+  justify-content: flex-end;
+    z-index: 0;
+}
+
+
+
+.background.notLoaded {
+  height: 100%;
+  width: 100%;
+  background-color: var(--background);
+  transition: background-color 2s;
+  
+}
+
+.background.loaded {
+  background-color: transparent;
+  transition: background-color 2s;
+}
+
+
+.loadingAnim.notLoaded {
+  opacity: 1;
+  transition: opacity 0.5s;
+  z-index: 2;
+}
+
+.loadingAnim.loaded {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s;
+  z-index: 2;
+}
+
+.notLoaded .link {
+  opacity: 0;
+  transition: background-color 2s;
+}
+
+.loaded .link {
+  opacity: 1;
+  transition: background-color 2s;
+}
+
+.point
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2 ;
+}
+
+.point .label
+{
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #00000050;
+    border: 1px solid #ffffff77;
+    color: #ffffff;
+    /* font-family: Helvetica, Arial, sans-serif; */
+    text-align: center;
+    line-height: 30px;
+    font-weight: 100;
+    font-size: 14px;
+    cursor: help;
+    transform: scale(0, 0);
+    transition: transform 0.3s;
+
+}
+
+.point.visible .label
+{
+    transform: scale(1, 1);
+}
+
+
+.point .text
+{
+    position: absolute;
+    bottom: 50px;
+    left: calc(-25vw - 15px);
+    width: 50vw;
+    padding: 20px;
+    border-radius: 4px;
+    /* background: #00000077; */
+    border: 1px solid #ffffff77;
+    color: #ffffff;
+    /* font-family: Helvetica, Arial, sans-serif; */
+    /* font-weight: 100;
+    font-size: 14px; */
+}
+
+.point .text
+{
+   /* ... */
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.point:hover .text
+{
+    opacity: 1;
+
+}
+
+
+.link{
+
+  position: absolute;
+  padding: 2%;
+    display: flex;
+  justify-content: space-between;
+  width: 96%;
+}
+
+.link p {
+  z-index: 2;
+}
+
+.instructions{
+  text-align: right;
+}
